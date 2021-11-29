@@ -1,10 +1,10 @@
 const Item = ({ id, note, date, time, deleteData, submittingStatus }) => {
 
   function deleteItem() {
-    submittingStatus.current = true
-    deleteData(function(prev) {
-      return prev.filter(item => item.id !== id)
-    })
+    submittingStatus.current = true;
+    deleteData(function (prev) {
+      return prev.filter(item => item.id !== id);
+    });
   }
 
   return (

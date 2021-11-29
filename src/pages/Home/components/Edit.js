@@ -2,6 +2,8 @@ import { useState } from "react";
 import { v4 } from "uuid";
 
 const Edit = ({ add, submittingStatus }) => {
+  // 利用 useState 來將 setNote 觸發的結果來綁定至 note
+  // just like 雙向綁定
   const [note, setNote] = useState("");
   function noteChange(e) {
     setNote(e.target.value);
@@ -17,13 +19,12 @@ const Edit = ({ add, submittingStatus }) => {
     setTime(e.target.value);
   }
 
-  // TODO del
   console.log(note, date, time);
 
   function addItem() {
-    submittingStatus.current = true
+    submittingStatus.current = true;
     add(function (prevData) {
-      return [       
+      return [
         {
           id: v4(),
           note,
